@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        android:title="@string/bonk_settings">
+        <PreferenceCategory android:title="General">
+                <CheckBoxPreference
+                        android:title="show circles"
+                        android:summary="Show or hide the circles."
+                        android:key="showCirclesPref" 
+                        android:defaultValue="true"
+                />
+                <CheckBoxPreference
+                		android:dependency="showCirclesPref"
+                        android:title="show trails"
+                        android:summary="Show or hide the circle trails."
+                        android:key="trailsPref" 
+                        android:defaultValue="false"
+                />
+                <ListPreference
+                		android:dependency="showCirclesPref"
+                        android:title="circle style"
+                        android:summary="Choose the circle style."                        
+                        android:key="circleStylePref"
+                        android:defaultValue="0"
+                        android:entries="@array/circleStyleNames"
+                        android:entryValues="@array/circleStyles"
+                />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Color">
+                <com.emirac.bonk.ColorPreference
+                        android:title="background"
+                        android:dialogTitle="background color" 
+                		android:summary="Change the background color."
+                        android:key="bgColorPref" 
+                        android:defaultValue="0x000037"
+                />        
+                <com.emirac.bonk.ColorPreference
+                        android:title="foreground"
+                        android:dialogTitle="foreground color" 
+                		android:summary="Change the foreground color."
+                        android:key="fgColorPref" 
+                        android:defaultValue="0xc8c800"
+                />        
+                <com.emirac.bonk.ColorPreference
+                        android:title="collision"
+                        android:dialogTitle="collision color" 
+                		android:summary="Change the collision color."
+                        android:key="waveColorPref" 
+                        android:defaultValue="0x7700aa"
+                />        
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Background Image">
+                <CheckBoxPreference
+                        android:title="show image"
+                        android:summary="Show or hide the background image."
+                        android:key="useImagePref" 
+                        android:defaultValue="false"
+                />
+                <Preference
+                   		android:dependency="useImagePref"
+                        android:title="background image"
+                		android:summary="Choose your own background image."
+                        android:key="bgImagePref" 
+                />        
+        </PreferenceCategory>
+        <PreferenceCategory android:title="Sound">
+                <CheckBoxPreference
+                        android:title="play sound"
+                        android:summary="Turn this off and be quiet!"
+                        android:key="soundOnOffPref" 
+                        android:defaultValue="true"
+                />
+                <ListPreference
+                   		android:dependency="soundOnOffPref"
+                        android:title="choose sound"
+                        android:summary="Choose from available sounds."                        
+                        android:key="soundStylePref"
+                        android:entries="@array/soundStyleNames"
+                        android:entryValues="@array/soundStyles"
+                        android:defaultValue="0"
+                />
+                <Preference
+                   		android:dependency="soundOnOffPref"
+                        android:title="make your own"
+                		android:summary="Choose or record your own sound or music to add to the list.  (uses only the first few seconds)"
+                        android:key="soundFilePref" 
+                />
+        </PreferenceCategory>
+</PreferenceScreen>

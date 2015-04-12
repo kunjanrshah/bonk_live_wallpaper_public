@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">bonk live wallpaper</string>
+<string name="bonk_name">bonk</string>
+<string name="bonk_desc">noisey annoying colliding circles</string>
+<string name="preferences_label">bonk Settings</string>
+<string name="bonk_settings">bonk wallpaper Settings</string>
+<string name="bonk_author">Jeff deRienzo</string>
+</resources>
